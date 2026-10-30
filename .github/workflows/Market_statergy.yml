@@ -31,3 +31,4 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           python Opening_Range_Breakout_ORB.py
+          python statergy_9.15.py

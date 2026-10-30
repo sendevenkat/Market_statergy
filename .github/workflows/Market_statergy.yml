@@ -1,9 +1,11 @@
 name: Nifty Stock Scanner
 
 on:
+  
+  ## 09:30 AM IST to 03:00 PM IST, Every 15 minutes, Monday to Friday
   schedule:
-    # Every 15 minutes during market hours
-    - cron: "*/15 * * * 1-5"
+    - cron: '1,16,31,46 4-8 * * 1-5'
+    - cron: '1,16,31 9 * * 1-5'
 
   workflow_dispatch:
 

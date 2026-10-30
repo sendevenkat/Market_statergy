@@ -10,6 +10,7 @@ import requests
 BOT_TOKEN = "9294156141:AAE7KKd1oCKtEryJbFuXTsz848hxiTAMcrc"
 CHAT_ID = "663250113"
 
+TRADER_NAME = "Venkatesh_sende"
 # =====================================
 # NIFTY 50 STOCKS
 # =====================================
@@ -132,6 +133,8 @@ for stock in stocks:
             msg = f"""
 🟢 BUY SIGNAL
 
+Trader: {TRADER_NAME}
+
 Stock: {stock}
 
 Price: {latest['Close']:.2f}
@@ -154,6 +157,8 @@ Volume   : {int(latest['Volume'])}
 
             msg = f"""
 🔴 SELL SIGNAL
+
+Trader: {TRADER_NAME}
 
 Stock: {stock}
 

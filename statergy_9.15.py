@@ -10,7 +10,7 @@ from datetime import datetime
 # ==========================================
 BOT_TOKEN = "9294156141:AAE7KKd1oCKtEryJbFuXTsz848hxiTAMcrc"
 CHAT_ID = "663250113"
-
+TRADER_NAME = "Venkatesh_sende"
 
 def send_telegram(message):
     try:
@@ -198,6 +198,7 @@ Explain this signal in one short paragraph.
             telegram_message = f"""
 {emoji} {signal} SIGNAL
 
+Trader: {TRADER_NAME}
 Stock: {stock}
 
 Price: {latest['Close']:.2f}

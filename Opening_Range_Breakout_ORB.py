@@ -175,15 +175,3 @@ Volume  : {int(latest['Volume'])}
 
     except Exception as e:
         print(f"{stock} -> {e}")
-
-
-
-import requests
-
-BOT_TOKEN = "AAE7KKd1oCKtEryJbFuXTsz848hxiTAMcrc"
-
-url = f"https://api.telegram.org/bot{BOT_TOKEN}/getMe"
-
-response = requests.get(url)
-
-print(response.text)

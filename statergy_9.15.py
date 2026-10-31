@@ -4,13 +4,17 @@ import yfinance as yf
 import pandas as pd
 import requests
 from datetime import datetime
+from zoneinfo import ZoneInfo
 
 # ==========================================
 # TELEGRAM CONFIG
 # ==========================================
 BOT_TOKEN = "9294156141:AAE7KKd1oCKtEryJbFuXTsz848hxiTAMcrc"
 CHAT_ID = "663250113"
-TRADER_NAME = "Venkatesh_sende"
+TRADER_NAME = "Venkatesh Sende"
+
+ist_now = datetime.now(ZoneInfo("Asia/Kolkata"))
+signal_time = ist_now.strftime("%d-%m-%Y %I:%M:%S %p")
 
 def send_telegram(message):
     try:
@@ -198,8 +202,10 @@ Explain this signal in one short paragraph.
             telegram_message = f"""
 {emoji} {signal} SIGNAL
 
-Trader: {TRADER_NAME}
-Stock: {stock}
+👤 Trader: {TRADER_NAME}
+🕒 Signal Time : {signal_time} IST
+
+📈 Stock: {stock}
 
 Price: {latest['Close']:.2f}
 VWAP: {latest['VWAP']:.2f}
@@ -209,6 +215,8 @@ OR Low: {or_low:.2f}
 
 Volume: {int(latest['Volume'])}
 Avg Volume: {int(avg_volume)}
+
+
 
 AI Analysis:
 {analysis[:500]}

@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  scan:
+  scanner:
     runs-on: ubuntu-latest
 
     steps:

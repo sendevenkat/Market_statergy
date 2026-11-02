@@ -1,0 +1,21 @@
+from SmartApi import SmartConnect
+import pyotp
+
+API_KEY = "YOUR_API_KEY"
+CLIENT_CODE = "YOUR_CLIENT_CODE"
+PIN = "5959"
+TOTP_SECRET = "YOUR_TOTP_SECRET"
+
+smartApi = SmartConnect(API_KEY)
+
+totp = pyotp.TOTP(TOTP_SECRET).now()
+
+session = smartApi.generateSession(
+
+
+    CLIENT_CODE,
+    PIN,
+    totp
+)
+
+print(session)
